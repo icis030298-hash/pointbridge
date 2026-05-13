@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Services } from "@/components/services";
 import { Methodology } from "@/components/methodology";
 import { Footer } from "@/components/footer";
-
-export type Language = "en" | "ko";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const TRANSLATIONS = {
   en: {
@@ -43,6 +41,27 @@ export const TRANSLATIONS = {
       aboutUs: "Point Bridge is a knowledge service export company specialized for global partners.",
       address: "36, Dongtanjungsimsangga 1-gil, Hwaseong-si, \nGyeonggi-do, Republic of Korea",
       brn: "BRN: 564-12-03412",
+    },
+    caseStudies: {
+      title: "Case Studies",
+      mainTitle: "Global Blue-Chip Equity Analysis",
+      subtitle: "Financial metrics and technical analysis modeling",
+      details: "Targeting global blue-chip stocks with a market capitalization of over 5 trillion KRW, we analyzed over 30 years of historical data to evaluate long-term stability. Specifically, we established a risk management model through entry strategies below the 0.382 Fibonacci Retracement level and defensive sector allocation.",
+      resultTitle: "Performance",
+      result: "Providing a sophisticated investment roadmap that preserves asset value even in highly volatile market environments.",
+      backLink: "Back to Home"
+    },
+    insights: {
+      title: "Insights",
+      article1: {
+        title: "Defensive Strategies in Bear Markets Using Technical Indicators: The Importance of the 0.382 Level",
+        date: "May 10, 2026"
+      },
+      article2: {
+        title: "Long-term Growth Drivers Through Data Analysis of Global Leading Enterprises",
+        date: "May 05, 2026"
+      },
+      backLink: "Back to Home"
     }
   },
   ko: {
@@ -78,18 +97,38 @@ export const TRANSLATIONS = {
       aboutUs: "포인트 브릿지는 글로벌 파트너사를 위한 지식 서비스 수출 전문 기업입니다.",
       address: "경기도 화성시 동탄중심상가1길 36",
       brn: "사업자등록번호: 564-12-03412",
+    },
+    caseStudies: {
+      title: "사례 연구",
+      mainTitle: "글로벌 블루칩 기업 재무 지표 및 기술적 분석 모델링",
+      subtitle: "Global Blue-Chip Equity Analysis",
+      details: "시가총액 5조 원 이상의 글로벌 우량주를 대상으로 30년 이상의 역사적 데이터를 분석하여 장기적 안정성을 평가함. 특히 피보나치 되돌림(Fibonacci Retracement) 0.382 레벨 이하에서의 진입 전략과 방어적 섹터 배분을 통한 리스크 관리 모델을 구축함.",
+      resultTitle: "성과",
+      result: "변동성이 높은 시장 환경에서도 자산 가치를 보존할 수 있는 정교한 투자 로드맵 제공.",
+      backLink: "홈으로 돌아가기"
+    },
+    insights: {
+      title: "인사이트",
+      article1: {
+        title: "기술적 분석 지표를 활용한 하락장 방어 전략: 0.382 레벨의 중요성",
+        date: "2026년 5월 10일"
+      },
+      article2: {
+        title: "글로벌 우량 기업의 데이터 분석을 통한 장기 성장 동력 확보 방안",
+        date: "2026년 5월 5일"
+      },
+      backLink: "홈으로 돌아가기"
     }
   }
 };
 
 export default function Home() {
-  const [lang, setLang] = useState<Language>("en");
-
+  const { lang } = useLanguage();
   const t = TRANSLATIONS[lang];
 
   return (
     <>
-      <Header lang={lang} setLang={setLang} />
+      <Header />
       <main>
         <Hero t={t.hero} />
         <Services t={t.services} />

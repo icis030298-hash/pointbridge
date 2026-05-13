@@ -36,7 +36,7 @@ export function Footer({ t }: FooterProps) {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Services
@@ -45,7 +45,7 @@ export function Footer({ t }: FooterProps) {
 
               <li>
                 <Link
-                  href="#"
+                  href="/case-studies"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Case Studies
@@ -53,7 +53,7 @@ export function Footer({ t }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/insights"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Insights

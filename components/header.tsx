@@ -4,14 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Language, TRANSLATIONS } from "@/app/page";
+import { useLanguage } from "@/context/LanguageContext";
+import { TRANSLATIONS } from "@/app/page";
 
-interface HeaderProps {
-  lang: Language;
-  setLang: (lang: Language) => void;
-}
-
-export function Header({ lang, setLang }: HeaderProps) {
+export function Header() {
+  const { lang, setLang } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,8 +23,8 @@ export function Header({ lang, setLang }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { label: t.services, href: "#services" },
-    { label: t.contact, href: "#contact" },
+    { label: t.services, href: "/#services" },
+    { label: t.contact, href: "/#contact" },
   ];
 
   return (
