@@ -41,7 +41,7 @@ export default function Insights() {
 
           <div className="grid gap-6">
             {articles.map((article, index) => (
-              <Link key={index} href={index === 0 ? "/insights/structural-threshold-analysis" : "#"}>
+              <Link key={index} href={index === 0 ? "/insights/structural-threshold-analysis" : index === 1 ? "/insights/resilience-and-anti-fragility" : "#"}>
                 <Card className="hover:shadow-lg transition-shadow duration-300 border-border bg-card overflow-hidden cursor-pointer">
                   <CardHeader className="pb-4">
                     <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
