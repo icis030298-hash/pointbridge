@@ -27,7 +27,6 @@ export function Header({ lang, setLang }: HeaderProps) {
 
   const navItems = [
     { label: t.services, href: "#services" },
-    { label: t.methodology, href: "#methodology" },
     { label: t.contact, href: "#contact" },
   ];
 

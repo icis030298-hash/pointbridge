@@ -42,14 +42,7 @@ export function Footer({ t }: FooterProps) {
                   Services
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="#methodology"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Methodology
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="#"
@@ -108,7 +101,7 @@ export function Footer({ t }: FooterProps) {
               &copy; {new Date().getFullYear()} Point Bridge. All rights reserved.
             </div>
             <div className="text-[10px] text-primary-foreground/40 font-light">
-              {t.brn} / Representative: Chun Bai-hong
+              {t.brn}
             </div>
             <div className="flex items-center gap-6 text-sm">
               <Link

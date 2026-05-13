@@ -63,7 +63,7 @@ export function Services({ t }: ServicesProps) {
                 <CardTitle className="text-xl lg:text-2xl font-semibold text-primary">
                   {service.title}
                 </CardTitle>
-                <p className="text-muted-foreground mt-2">{service.description}</p>
+                <p className="text-muted-foreground mt-2 break-keep">{service.description}</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">

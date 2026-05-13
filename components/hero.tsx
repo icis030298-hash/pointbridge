@@ -95,13 +95,6 @@ export function Hero({ t }: HeroProps) {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </a>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-border text-primary hover:bg-secondary px-8 h-12 text-base"
-          >
-            {t.ctaSecondary}
-          </Button>
         </div>
       </div>
     </section>
