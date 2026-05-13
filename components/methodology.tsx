@@ -33,7 +33,7 @@ export function Methodology({ lang }: MethodologyProps) {
     },
     ko: {
       badge: "비즈니스 프로세스",
-      title: "체계적인 용역 수행 방법론",
+      title: "체계적인 서비스 제공 프로세스",
       description: "포인트 브릿지만의 체계적인 프로세스를 통해 일관된 결과와 투명한 소통을 보장합니다.",
       steps: [
         {
@@ -67,10 +67,10 @@ export function Methodology({ lang }: MethodologyProps) {
           <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
             {t.badge}
           </span>
-          <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary text-balance">
+          <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary text-balance break-keep">
             {t.title}
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-muted-foreground max-w-4xl mx-auto break-keep">
             {t.description}
           </p>
         </div>

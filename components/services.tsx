@@ -45,7 +45,7 @@ export function Services({ t }: ServicesProps) {
           <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary text-balance break-keep">
             {t.title}
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto break-keep">
+          <p className="mt-4 text-lg text-muted-foreground max-w-4xl mx-auto break-keep">
             {t.description}
           </p>
         </div>
