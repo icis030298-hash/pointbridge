@@ -41,23 +41,25 @@ export default function Insights() {
 
           <div className="grid gap-6">
             {articles.map((article, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-border bg-card overflow-hidden">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                    <Clock size={14} />
-                    {article.date}
-                  </div>
-                  <CardTitle className="text-xl md:text-2xl font-semibold text-primary leading-snug break-keep">
-                    {article.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="link" className="p-0 h-auto text-primary font-medium hover:no-underline flex items-center gap-2">
-                    {lang === "en" ? "Read full article" : "전체 읽기"}
-                    <ArrowLeft className="w-4 h-4 rotate-180" />
-                  </Button>
-                </CardContent>
-              </Card>
+              <Link key={index} href={index === 0 ? "/insights/structural-threshold-analysis" : "#"}>
+                <Card className="hover:shadow-lg transition-shadow duration-300 border-border bg-card overflow-hidden cursor-pointer">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                      <Clock size={14} />
+                      {article.date}
+                    </div>
+                    <CardTitle className="text-xl md:text-2xl font-semibold text-primary leading-snug break-keep">
+                      {article.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-primary font-medium flex items-center gap-2">
+                      {lang === "en" ? "Read full article" : "전체 읽기"}
+                      <ArrowLeft className="w-4 h-4 rotate-180" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
