@@ -105,13 +105,13 @@ export function Footer({ t }: FooterProps) {
             </div>
             <div className="flex items-center gap-6 text-sm">
               <Link
-                href="#"
+                href="/privacy"
                 className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="#"
+                href="/terms"
                 className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
               >
                 Terms of Service
