@@ -65,11 +65,10 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary-foreground/70 mt-0.5 shrink-0" />
-                <span className="text-primary-foreground/80 leading-relaxed text-sm lg:text-base">
-                  36, Dongtanjungsimsangga 1-gil, Hwaseong-si,
-                  <br />
+                <p className="text-primary-foreground/80 leading-relaxed text-sm lg:text-base whitespace-pre-line">
+                  36, Dongtanjungsimsangga 1-gil, Hwaseong-si, {"\n"}
                   Gyeonggi-do, Republic of Korea
-                </span>
+                </p>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary-foreground/70 shrink-0" />
