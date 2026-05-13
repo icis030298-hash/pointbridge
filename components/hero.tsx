@@ -1,7 +1,16 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function Hero() {
+interface HeroProps {
+  t: {
+    title: string;
+    description: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
+  };
+}
+
+export function Hero({ t }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Geometric Background Pattern */}
@@ -68,37 +77,32 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center pt-20">
-
-
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-primary leading-tight text-balance">
-          Data-Driven Insights for
-          <br className="hidden md:block" />
-          Strategic Growth
+          {t.title}
         </h1>
 
         <p className="mt-6 lg:mt-8 text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty">
-          We transform complex data into actionable strategies, empowering
-          enterprises to make confident decisions and achieve sustainable growth.
+          {t.description}
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base"
-          >
-            Schedule Consultation
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <a href="mailto:icis10001@gmail.com">
+            <Button
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base"
+            >
+              {t.ctaPrimary}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </a>
           <Button
             variant="outline"
             size="lg"
             className="border-border text-primary hover:bg-secondary px-8 h-12 text-base"
           >
-            View Case Studies
+            {t.ctaSecondary}
           </Button>
         </div>
-
-
       </div>
     </section>
   );

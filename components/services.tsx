@@ -1,49 +1,52 @@
 import { BarChart3, Compass, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const services = [
-  {
-    icon: BarChart3,
-    title: "Advanced Data Analytics",
-    description:
-      "Transform raw data into actionable intelligence with our cutting-edge analytics solutions.",
-    features: [
-      "Predictive modeling & machine learning",
-      "Real-time dashboard development",
-      "Custom KPI tracking systems",
-      "Data visualization & reporting",
-    ],
-  },
-  {
-    icon: Compass,
-    title: "Strategic Consulting",
-    description:
-      "Navigate complex business challenges with expert guidance and proven methodologies.",
-    features: [
-      "Market analysis & competitive intelligence",
-      "Growth strategy development",
-      "Operational efficiency optimization",
-      "Digital transformation roadmaps",
-    ],
-  },
-];
+interface ServicesProps {
+  t: {
+    badge: string;
+    title: string;
+    description: string;
+    item1: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    item2: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+  };
+}
 
-export function Services() {
+export function Services({ t }: ServicesProps) {
+  const services = [
+    {
+      icon: BarChart3,
+      title: t.item1.title,
+      description: t.item1.description,
+      features: t.item1.features,
+    },
+    {
+      icon: Compass,
+      title: t.item2.title,
+      description: t.item2.description,
+      features: t.item2.features,
+    },
+  ];
+
   return (
     <section id="services" className="py-24 lg:py-32 bg-secondary">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 lg:mb-20">
           <span className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
-            Our Services
+            {t.badge}
           </span>
           <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-primary text-balance">
-            Comprehensive Solutions for
-            <br className="hidden md:block" />
-            Modern Enterprises
+            {t.title}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            We offer end-to-end services that bridge the gap between data complexity
-            and strategic clarity.
+            {t.description}
           </p>
         </div>
 

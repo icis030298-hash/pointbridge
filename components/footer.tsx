@@ -1,7 +1,16 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-export function Footer() {
+interface FooterProps {
+  t: {
+    description: string;
+    aboutUs: string;
+    address: string;
+    brn: string;
+  };
+}
+
+export function Footer({ t }: FooterProps) {
   return (
     <footer id="contact" className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
@@ -13,10 +22,11 @@ export function Footer() {
                 Point Bridge
               </span>
             </Link>
-            <p className="mt-4 text-primary-foreground/80 max-w-md leading-relaxed">
-              Transforming businesses through data-driven insights and strategic
-              consulting. We help enterprises navigate complexity and achieve
-              sustainable growth.
+            <p className="mt-4 text-primary-foreground/80 max-w-md leading-relaxed text-sm">
+              {t.aboutUs}
+            </p>
+            <p className="mt-4 text-primary-foreground/60 max-w-md leading-relaxed text-xs">
+              {t.description}
             </p>
           </div>
 
@@ -66,8 +76,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary-foreground/70 mt-0.5 shrink-0" />
                 <p className="text-primary-foreground/80 leading-relaxed text-sm lg:text-base whitespace-pre-line">
-                  36, Dongtanjungsimsangga 1-gil, Hwaseong-si, {"\n"}
-                  Gyeonggi-do, Republic of Korea
+                  {t.address}
                 </p>
               </li>
               <li className="flex items-center gap-3">
@@ -99,7 +108,7 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Point Bridge. All rights reserved.
             </div>
             <div className="text-[10px] text-primary-foreground/40 font-light">
-              BRN: 564-12-03412
+              {t.brn} / Representative: Chun Bai-hong
             </div>
             <div className="flex items-center gap-6 text-sm">
               <Link
