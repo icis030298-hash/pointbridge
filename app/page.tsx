@@ -60,8 +60,8 @@ export const TRANSLATIONS = {
     },
     services: {
       badge: "주요 서비스",
-      title: "지식 서비스 수출 전문 솔루션",
-      description: "데이터의 복잡성과 전략적 명확성 사이의 가교 역할을 하는 엔드투엔드 서비스를 제공합니다.",
+      title: "글로벌 데이터 분석 및 전략 솔루션",
+      description: "데이터 기반의 통찰력으로 기업의 전략적 의사결정을 완벽하게 지원합니다.",
       item1: {
         title: "데이터 분석 솔루션",
         description: "해외 기업이 필요로 하는 원천 데이터를 수집하고 분석하여 정제된 정보를 제공합니다.",
